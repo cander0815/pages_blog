@@ -1,0 +1,334 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>uni-app快速上手 | 阿德的小窝</title><meta name="keywords" content="uni-app, vue"><meta name="author" content="Cander0815"><meta name="copyright" content="Cander0815"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="uni-app 是什么uni-app是一套可以适用多端的开源框架，一套代码可以同时生成ios，Android，H5，微信小程序，支付宝小程序，百度小程序等。 uni-app 优势&#x2F;劣势优点 一套代码多端复用 uni-app使用H5技术开发，学习成本低  缺点 由于适应多端。某些兼容性问题无法快速定位解决  创建项目命令行 搭建NODEJS环境  全局安装vue-cli  使用vue-cl">
+<meta property="og:type" content="article">
+<meta property="og:title" content="uni-app快速上手">
+<meta property="og:url" content="https://cander0815.gitee.io/2022/09/16/uni-app/index.html">
+<meta property="og:site_name" content="阿德的小窝">
+<meta property="og:description" content="uni-app 是什么uni-app是一套可以适用多端的开源框架，一套代码可以同时生成ios，Android，H5，微信小程序，支付宝小程序，百度小程序等。 uni-app 优势&#x2F;劣势优点 一套代码多端复用 uni-app使用H5技术开发，学习成本低  缺点 由于适应多端。某些兼容性问题无法快速定位解决  创建项目命令行 搭建NODEJS环境  全局安装vue-cli  使用vue-cl">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
+<meta property="article:published_time" content="2022-09-16T02:23:34.000Z">
+<meta property="article:modified_time" content="2022-09-21T07:36:55.560Z">
+<meta property="article:author" content="Cander0815">
+<meta property="article:tag" content="uni-app, vue">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"><link rel="shortcut icon" href="/img/favicon.ico"><link rel="canonical" href="https://cander0815.gitee.io/2022/09/16/uni-app/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: Cander0815","link":"链接: ","source":"来源: 阿德的小窝","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'uni-app快速上手',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-09-21 15:36:55'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.0.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data is-center"><div class="data-item"><a href="/archives/"><div class="headline">文章</div><div class="length-num">3</div></a></div><div class="data-item"><a href="/tags/"><div class="headline">标签</div><div class="length-num">3</div></a></div><div class="data-item"><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 我是谁</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">阿德的小窝</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 我是谁</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">uni-app快速上手</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-09-16T02:23:34.000Z" title="发表于 2022-09-16 10:23:34">2022-09-16</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-09-21T07:36:55.560Z" title="更新于 2022-09-21 15:36:55">2022-09-21</time></span></div><div class="meta-secondline"></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="uni-app-是什么"><a href="#uni-app-是什么" class="headerlink" title="uni-app 是什么"></a>uni-app 是什么</h1><p>uni-app是一套可以适用多端的开源框架，一套代码可以同时生成ios，Android，H5，微信小程序，支付宝小程序，百度小程序等。</p>
+<h1 id="uni-app-优势-x2F-劣势"><a href="#uni-app-优势-x2F-劣势" class="headerlink" title="uni-app 优势&#x2F;劣势"></a>uni-app 优势&#x2F;劣势</h1><h2 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h2><ul>
+<li>一套代码多端复用</li>
+<li>uni-app使用H5技术开发，学习成本低</li>
+</ul>
+<h2 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h2><ul>
+<li>由于适应多端。某些兼容性问题无法快速定位解决</li>
+</ul>
+<h1 id="创建项目"><a href="#创建项目" class="headerlink" title="创建项目"></a>创建项目</h1><h2 id="命令行"><a href="#命令行" class="headerlink" title="命令行"></a>命令行</h2><ol>
+<li><p>搭建NODEJS环境</p>
+</li>
+<li><p>全局安装vue-cli</p>
+</li>
+<li><p>使用vue-cli 创建项目</p>
+</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">vue create -p dcloudio/uni-preset-vue my-project</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<ol start="4">
+<li>选择对应的模版</li>
+</ol>
+<h2 id="HBuilderX"><a href="#HBuilderX" class="headerlink" title="HBuilderX"></a>HBuilderX</h2><p>可视化操作</p>
+<p>HBuilderX 更加的简洁，但是无法实现自动化打包。</p>
+<h1 id="编码"><a href="#编码" class="headerlink" title="编码"></a>编码</h1><p>uni-app的代码风格和API默认是向微信小程序对齐。默认实现了所有的微信小程序支持的API</p>
+<p>编码HTML标签不可以使用，向微信小程序看起。向下面几个例子：</p>
+<ul>
+<li><code>div</code> &#x3D;&gt; <code>view</code></li>
+<li><code>span</code> &#x3D;&gt; <code>text</code></li>
+<li><code>img</code> &#x3D;&gt; <code>image</code></li>
+</ul>
+<p>布局方式 只推荐使用flex布局。 比如nvue、快应用只支持flex布局</p>
+<p>非H5端，不能使用浏览器自带对象，比如document、window、localstorage、cookie等，更不能使用jquery等依赖这些浏览器对象的框架。因为各家小程序快应用都不支持这些对象。</p>
+<p>单位方面，uni-app默认为rpx。这是一种可跨端的通用单位</p>
+<p><a target="_blank" rel="noopener" href="https://uniapp.dcloud.net.cn/tutorial/page.html#lifecycle">页面与组件生命周期不同</a></p>
+<h2 id="nvue"><a href="#nvue" class="headerlink" title="nvue"></a>nvue</h2><p>uni-app App 端内置了一个基于 weex 改进的原生渲染引擎，提供了原生渲染能力。</p>
+<p>在 App 端，如果使用 vue 页面，则使用 webview 渲染；如果使用 nvue 页面(native vue 的缩写)，则使用原生渲染。</p>
+<p>如果仅开发APP的话，建议时间nvue。编译成APP后性能更加流畅。</p>
+<p>但是它限制比较多比如：</p>
+<ul>
+<li>布局不能使用百分比、没有媒体查询。</li>
+<li>nvue 页面只能使用flex布局，不支持其他布局方式。页面开发前，首先想清楚这个页面的纵向内容有什么，哪些是要滚动的，然后每个纵向内容的横轴排布有什么，按 flex 布局设计好界面。</li>
+<li>只可以使用v-if不可以使用v-show</li>
+<li>文字内容，必须、只能在<code>text</code>组件下，且只有<code>text</code>标签可以设置字体大小，字体颜色。</li>
+<li>不支持背景图。</li>
+<li>不能在 style 中引入字体文件</li>
+</ul>
+<h2 id="条件编译"><a href="#条件编译" class="headerlink" title="条件编译"></a>条件编译</h2><p>条件编译是用特殊的注释作为标记，在编译时根据这些特殊的注释，将注释里面的代码编译到不同平台。</p>
+<p>基本可以在项目中任何会被编译的文件中使用，包括<code>pages.json</code></p>
+<p>写法是 <code>#ifdef</code> 或 <code>#ifndef</code> 加 <code>%PLATFORM%</code> 开头 以<code>#endif</code> 结尾。</p>
+<table>
+<thead>
+<tr>
+<th>条件编译写法</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>#ifdef APP-PLUS <br> 需条件编译的代码  <br> #endif</td>
+<td>仅出现在 App 平台下的代码</td>
+</tr>
+<tr>
+<td>#ifdef H5 <br>  需条件编译的代码 <br>  #endif</td>
+<td>除了 H5 平台，其它平台均存在的代码</td>
+</tr>
+<tr>
+<td>#ifdef H5 || MP-WEIXIN <br> 需条件编译的代码 <br> #endif</td>
+<td>在 H5 平台或微信小程序平台存在的代码（这里只有||，不可能出现&amp;&amp;，因为没有交集）</td>
+</tr>
+</tbody></table>
+<p>%PLATFORM% 可取值如下：</p>
+<table>
+<thead>
+<tr>
+<th>值</th>
+<th>生效条件</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>APP-PLUS</td>
+<td>App</td>
+</tr>
+<tr>
+<td>APP-PLUS-NVUE或APP-NVUE</td>
+<td>App nvue 页面</td>
+</tr>
+<tr>
+<td>H5</td>
+<td>H5</td>
+</tr>
+<tr>
+<td>MP-WEIXIN</td>
+<td>微信小程序</td>
+</tr>
+<tr>
+<td>MP-ALIPAY</td>
+<td>支付宝小程序</td>
+</tr>
+<tr>
+<td>MP-BAIDU</td>
+<td>百度小程序</td>
+</tr>
+<tr>
+<td>MP-TOUTIAO</td>
+<td>字节跳动小程序</td>
+</tr>
+<tr>
+<td>MP-LARK</td>
+<td>飞书小程序</td>
+</tr>
+<tr>
+<td>MP-QQ</td>
+<td>QQ小程序</td>
+</tr>
+<tr>
+<td>MP-KUAISHOU</td>
+<td>快手小程序</td>
+</tr>
+<tr>
+<td>MP-JD</td>
+<td>京东小程序</td>
+</tr>
+<tr>
+<td>MP-360</td>
+<td>360小程序</td>
+</tr>
+<tr>
+<td>MP</td>
+<td>微信小程序&#x2F;支付宝小程序&#x2F;百度小程序&#x2F;字节跳动小程序&#x2F;飞书小程序&#x2F;QQ小程序&#x2F;360小程序</td>
+</tr>
+<tr>
+<td>QUICKAPP-WEBVIEW</td>
+<td>快应用通用(包含联盟、华为)</td>
+</tr>
+<tr>
+<td>QUICKAPP-WEBVIEW-UNION</td>
+<td>快应用联盟</td>
+</tr>
+<tr>
+<td>QUICKAPP-WEBVIEW-HUAWEI</td>
+<td>快应用华为</td>
+</tr>
+</tbody></table>
+<p>注意：</p>
+<ul>
+<li>条件编译是利用注释实现的，在不同语法里注释写法不一样，js使用 <code>// 注释</code>、css 使用 <code>/* 注释 */</code>、vue&#x2F;nvue 模板里使用 <code>&lt;!-- 注释 --&gt;</code>；</li>
+<li>使用条件编译请保证编译前和编译后文件的正确性，比如json文件中不能有多余的逗号；</li>
+<li>条件编译APP-PLUS包含APP-NVUE和APP-VUE，APP-PLUS-NVUE和APP-NVUE没什么区别，为了简写后面出了APP-NVUE ；</li>
+<li>Android 和 iOS 平台不支持通过条件编译来区分，如果需要区分 Android、iOS 平台，请通过调用 uni.getSystemInfo 来获取平台信息。<i>(HBuildX 支持ifios、ifAndroid代码块，可方便编写判断。)</i></li>
+</ul>
+<h3 id="static-目录的条件编译"><a href="#static-目录的条件编译" class="headerlink" title="static 目录的条件编译"></a>static 目录的条件编译</h3><p>在不同平台，引用的静态资源可能也存在差异，通过 static 的的条件编译可以解决此问题，static 目录下新建不同平台的专有目录（目录名称同 <code>%PLATFORM%</code> 值域,但字母均为<strong>小写</strong>），专有目录下的静态资源只有在特定平台才会编译进去。</p>
+<p>如以下目录结构，a.png 只有在微信小程序平台才会编译进去，b.png 在所有平台都会被编译。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">┌─static</span><br><span class="line">│  ├─mp-weixin</span><br><span class="line">│  │  └─a.png</span><br><span class="line">│  └─b.png</span><br><span class="line">├─main.js</span><br><span class="line">├─App.vue</span><br><span class="line">├─manifest.json</span><br><span class="line">└─pages.json</span><br></pre></td></tr></table></figure>
+
+<h3 id="整体目录条件编译"><a href="#整体目录条件编译" class="headerlink" title="整体目录条件编译"></a>整体目录条件编译</h3><p>如果想把各平台的页面文件更彻底的分开，也可以在uni-app项目根目录创建platforms目录，然后在下面进一步创建<code>app-plus</code>、<code>mp-weixin</code>等子目录，存放不同平台的文件。</p>
+<p>注意</p>
+<ul>
+<li>platforms目录下只支持放置页面文件（即页面vue文件），如果需要对其他资源条件编译建议使用static 目录的条件编译</li>
+</ul>
+<h2 id="环境变量和自定义配置"><a href="#环境变量和自定义配置" class="headerlink" title="环境变量和自定义配置"></a>环境变量和自定义配置</h2><p>由于本质上打包方式还是基于<code>vue-cli</code>和<code>webpack</code>进行的代码打包。因此可以和开发vue一样进行环境变量和webpack的配置修改<br>但是又有部分不同：</p>
+<ul>
+<li>publicPath 不支持，如果需要配置，请在 manifest.json-&gt;h5-&gt;router-&gt;base 中配置，参考文档：h5-router</li>
+<li>outputDir 不支持</li>
+<li>assetsDir 固定 static</li>
+<li>pages 不支持</li>
+<li>runtimeCompiler 固定 false</li>
+<li>productionSourceMap 固定 false</li>
+<li>css.extract H5 平台固定 false，其他平台固定 true</li>
+<li>parallel 固定 false</li>
+</ul>
+<h3 id="环境变量"><a href="#环境变量" class="headerlink" title="环境变量"></a>环境变量</h3><p>在<code>vue-cli</code>创建的项目中，可以创建<code>.env</code>等环境文件，然后在<code>package.json</code>中打包命令配置对应的 <code>--mode</code>来区分</p>
+<p>HBuildX 目前没有好的发现。可能需要手动维护</p>
+<h3 id="自定义配置"><a href="#自定义配置" class="headerlink" title="自定义配置"></a>自定义配置</h3><p>cli 和 最新的 HBuildX都支持 载入 <code>vue.config.js</code> 配置</p>
+<h1 id="发布"><a href="#发布" class="headerlink" title="发布"></a>发布</h1><h2 id="自动化部署"><a href="#自动化部署" class="headerlink" title="自动化部署"></a>自动化部署</h2><p>和平时发布前端包一样，执行对应的 npm 命令即可</p>
+<p>由于不支持修改<code>outputDir</code>,因此建议在npm打包命令完成后，跟shell命令移动到制定位置 例如：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">npm run build:h5:<span class="built_in">test</span> &amp;&amp; <span class="built_in">mv</span> ./dist/build/h5 ./saas-admin-h5</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>App建议使用 HBuildX的图形化操作。</p>
+<h2 id="本地打包"><a href="#本地打包" class="headerlink" title="本地打包"></a>本地打包</h2><p>HBuildX 图形化操作</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">Cander0815</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://cander0815.gitee.io/2022/09/16/uni-app/">https://cander0815.gitee.io/2022/09/16/uni-app/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://cander0815.gitee.io" target="_blank">阿德的小窝</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/uni-app-vue/">uni-app, vue</a></div><div class="post_share"><div class="social-share" data-image="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2022/06/08/docker%E5%85%A5%E9%97%A8/"><img class="next-cover" src="/images/docker.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">docker入门</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/avatar.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Cander0815</div><div class="author-info__description">一位前端开发者</div></div><div class="card-info-data is-center"><div class="card-info-data-item"><a href="/archives/"><div class="headline">文章</div><div class="length-num">3</div></a></div><div class="card-info-data-item"><a href="/tags/"><div class="headline">标签</div><div class="length-num">3</div></a></div><div class="card-info-data-item"><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://gitee.com/cander0815"><i class="fab fa-github"></i><span>码云</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="mailto:cander0815@163.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#uni-app-%E6%98%AF%E4%BB%80%E4%B9%88"><span class="toc-number">1.</span> <span class="toc-text">uni-app 是什么</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#uni-app-%E4%BC%98%E5%8A%BF-x2F-%E5%8A%A3%E5%8A%BF"><span class="toc-number">2.</span> <span class="toc-text">uni-app 优势&#x2F;劣势</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BC%98%E7%82%B9"><span class="toc-number">2.1.</span> <span class="toc-text">优点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BC%BA%E7%82%B9"><span class="toc-number">2.2.</span> <span class="toc-text">缺点</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E9%A1%B9%E7%9B%AE"><span class="toc-number">3.</span> <span class="toc-text">创建项目</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%91%BD%E4%BB%A4%E8%A1%8C"><span class="toc-number">3.1.</span> <span class="toc-text">命令行</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HBuilderX"><span class="toc-number">3.2.</span> <span class="toc-text">HBuilderX</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BC%96%E7%A0%81"><span class="toc-number">4.</span> <span class="toc-text">编码</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#nvue"><span class="toc-number">4.1.</span> <span class="toc-text">nvue</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9D%A1%E4%BB%B6%E7%BC%96%E8%AF%91"><span class="toc-number">4.2.</span> <span class="toc-text">条件编译</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#static-%E7%9B%AE%E5%BD%95%E7%9A%84%E6%9D%A1%E4%BB%B6%E7%BC%96%E8%AF%91"><span class="toc-number">4.2.1.</span> <span class="toc-text">static 目录的条件编译</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B4%E4%BD%93%E7%9B%AE%E5%BD%95%E6%9D%A1%E4%BB%B6%E7%BC%96%E8%AF%91"><span class="toc-number">4.2.2.</span> <span class="toc-text">整体目录条件编译</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E5%92%8C%E8%87%AA%E5%AE%9A%E4%B9%89%E9%85%8D%E7%BD%AE"><span class="toc-number">4.3.</span> <span class="toc-text">环境变量和自定义配置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F"><span class="toc-number">4.3.1.</span> <span class="toc-text">环境变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E9%85%8D%E7%BD%AE"><span class="toc-number">4.3.2.</span> <span class="toc-text">自定义配置</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8F%91%E5%B8%83"><span class="toc-number">5.</span> <span class="toc-text">发布</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%87%AA%E5%8A%A8%E5%8C%96%E9%83%A8%E7%BD%B2"><span class="toc-number">5.1.</span> <span class="toc-text">自动化部署</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%AC%E5%9C%B0%E6%89%93%E5%8C%85"><span class="toc-number">5.2.</span> <span class="toc-text">本地打包</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/09/16/uni-app/" title="uni-app快速上手"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="uni-app快速上手"/></a><div class="content"><a class="title" href="/2022/09/16/uni-app/" title="uni-app快速上手">uni-app快速上手</a><time datetime="2022-09-16T02:23:34.000Z" title="发表于 2022-09-16 10:23:34">2022-09-16</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/06/08/docker%E5%85%A5%E9%97%A8/" title="docker入门"><img src="/images/docker.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="docker入门"/></a><div class="content"><a class="title" href="/2022/06/08/docker%E5%85%A5%E9%97%A8/" title="docker入门">docker入门</a><time datetime="2022-06-08T02:27:55.000Z" title="发表于 2022-06-08 10:27:55">2022-06-08</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2017/12/18/grid%E5%85%A5%E9%97%A8/" title="Grid布局入门"><img src="/images/grid.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Grid布局入门"/></a><div class="content"><a class="title" href="/2017/12/18/grid%E5%85%A5%E9%97%A8/" title="Grid布局入门">Grid布局入门</a><time datetime="2017-12-17T16:00:00.000Z" title="发表于 2017-12-18 00:00:00">2017-12-18</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By Cander0815</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"></div></div></body></html>
